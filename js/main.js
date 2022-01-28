@@ -95,6 +95,42 @@ document.addEventListener("DOMContentLoaded", (ev) => {
     }
     showPolitic();
 
+    const checkInputForm = () => {
+        document.addEventListener("click", (ev) => {
+            if (ev.target && ev.target.classList.contains("order__form") || ev.target && ev.target.classList.contains("order__input")) {
+                const orderForm = document.querySelectorAll(".order__form");
+                orderForm.forEach(element => {
+                    element.addEventListener("keypress", (v) => {
+                        const name = element.querySelector("#name").value;
+                        const phone = element.querySelector("#phone").value;
+                        const btn = element.querySelector(".button_order");
+                        if (name.length >= 3 && phone.length >= 11) {
+                            btn.classList.add("gradient");
+                            btn.classList.remove("button__disabled");
+                        }
+                    })
+                })
+            }
+        })
+
+    }
+    checkInputForm();
+
+    const addMaskForPhone = () => {
+        document.addEventListener("keypress", (ev) => {
+            if (ev.target && ev.target.classList.contains("order__phone")) {
+                let phone = ev.target;
+                let maskOptions = {
+                    mask: '+{7}(000)000-00-00',
+                    // lazy: false
+                };
+                let mask = IMask(phone, maskOptions);
+            }
+        });
+
+    }
+    addMaskForPhone();
+
    const glideBanner= new Glide('.glide_banner', {
         type: 'slider',
         animationDuration: 2000,

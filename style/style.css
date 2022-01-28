@@ -32,7 +32,6 @@ body {
 }
 .subtitle {
     font-family: "NunitoSans", sans-serif;
-    font-weight: 600;
     font-size: 23px;
     word-break: break-word;
 }
@@ -90,7 +89,10 @@ body {
     text-decoration: none;
     transition: 0.2s ease-in;
 }
-
+.button__disabled {
+    pointer-events: none;
+    background-color: #7D7D7D;
+}
 
 .hidden {
     display: none;
@@ -264,10 +266,12 @@ body {
     width: 100%;
 }
 .text_price-list {
+    font-family: "Geometria", sans-serif;
+    text-transform: uppercase;
     white-space: nowrap;
     padding-left: 50px;
     position: relative;
-    font-weight: 600;
+    font-weight: 500;
     color: #37158D;
 }
 .glide_price-list > .glide__slide {
@@ -613,12 +617,13 @@ body {
 .services__row {
     height: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
 }
 
 
 .services__item {
+    margin-right: 10px;
     margin-bottom: 20px;
     max-width: 285px;
     width: 100%;
@@ -659,12 +664,15 @@ body {
 }
 
 .text_services {
+    font-family: "Geometria", sans-serif;
+    text-transform: uppercase;
     margin-top: 15px;
     font-weight: 700;
     color:  #36148C;
 }
 
 .button_services {
+    padding: 12px 50px !important;
     margin-top: 25px;
 }
 .button_services--transparent {
